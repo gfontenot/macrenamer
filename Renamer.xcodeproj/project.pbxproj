@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8012F5615583D9A00F71DD3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012F5515583D9A00F71DD3 /* Cocoa.framework */; };
+		F8012F5815583D9A00F71DD3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012F5715583D9A00F71DD3 /* MacRuby.framework */; };
+		F8012F5F15583D9A00F71DD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8012F5D15583D9A00F71DD3 /* InfoPlist.strings */; };
+		F8012F6115583D9A00F71DD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8012F6015583D9A00F71DD3 /* main.m */; };
+		F8012F6615583D9A00F71DD3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6415583D9A00F71DD3 /* MainMenu.xib */; };
+		F8012F6915583D9A00F71DD3 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6815583D9A00F71DD3 /* rb_main.rb */; };
+		F8012F6B15583D9A00F71DD3 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F8012F5115583D9A00F71DD3 /* Renamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8012F5515583D9A00F71DD3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F8012F5715583D9A00F71DD3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
+		F8012F5C15583D9A00F71DD3 /* Renamer-Info.plist */ = {isa = PBXFileReference; path = "Renamer-Info.plist"; sourceTree = "<group>"; };
+		F8012F5E15583D9A00F71DD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8012F6015583D9A00F71DD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8012F6215583D9A00F71DD3 /* Renamer-Prefix.pch */ = {isa = PBXFileReference; path = "Renamer-Prefix.pch"; sourceTree = "<group>"; };
+		F8012F6515583D9A00F71DD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F8012F6815583D9A00F71DD3 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
+		F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8012F4E15583D9A00F71DD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8012F5615583D9A00F71DD3 /* Cocoa.framework in Frameworks */,
+				F8012F5815583D9A00F71DD3 /* MacRuby.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8012F4615583D9A00F71DD3 = {
+			isa = PBXGroup;
+			children = (
+				F8012F5A15583D9A00F71DD3 /* Renamer */,
+				F8012F5415583D9A00F71DD3 /* Frameworks */,
+				F8012F5215583D9A00F71DD3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8012F5215583D9A00F71DD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8012F5115583D9A00F71DD3 /* Renamer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8012F5415583D9A00F71DD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8012F5515583D9A00F71DD3 /* Cocoa.framework */,
+				F8012F5715583D9A00F71DD3 /* MacRuby.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8012F5A15583D9A00F71DD3 /* Renamer */ = {
+			isa = PBXGroup;
+			children = (
+				F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */,
+				F8012F6315583D9A00F71DD3 /* Resources */,
+				F8012F6715583D9A00F71DD3 /* Other Sources */,
+				F8012F5B15583D9A00F71DD3 /* Supporting Files */,
+			);
+			path = Renamer;
+			sourceTree = "<group>";
+		};
+		F8012F5B15583D9A00F71DD3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8012F5C15583D9A00F71DD3 /* Renamer-Info.plist */,
+				F8012F5D15583D9A00F71DD3 /* InfoPlist.strings */,
+				F8012F6015583D9A00F71DD3 /* main.m */,
+				F8012F6215583D9A00F71DD3 /* Renamer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8012F6315583D9A00F71DD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8012F6415583D9A00F71DD3 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F8012F6715583D9A00F71DD3 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F8012F6815583D9A00F71DD3 /* rb_main.rb */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		F8012F5915583D9A00F71DD3 /* Deployment */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "--compile --embed";
+			buildConfigurationList = F8012F7115583D9A00F71DD3 /* Build configuration list for PBXLegacyTarget "Deployment" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/macruby_deploy;
+			dependencies = (
+			);
+			name = Deployment;
+			passBuildSettingsInEnvironment = 1;
+			productName = Deployment;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		F8012F5015583D9A00F71DD3 /* Renamer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8012F6E15583D9A00F71DD3 /* Build configuration list for PBXNativeTarget "Renamer" */;
+			buildPhases = (
+				F8012F4D15583D9A00F71DD3 /* Sources */,
+				F8012F4E15583D9A00F71DD3 /* Frameworks */,
+				F8012F4F15583D9A00F71DD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Renamer;
+			productName = Renamer;
+			productReference = F8012F5115583D9A00F71DD3 /* Renamer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8012F4815583D9A00F71DD3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = WheelsTV;
+			};
+			buildConfigurationList = F8012F4B15583D9A00F71DD3 /* Build configuration list for PBXProject "Renamer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F8012F4615583D9A00F71DD3;
+			productRefGroup = F8012F5215583D9A00F71DD3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8012F5015583D9A00F71DD3 /* Renamer */,
+				F8012F5915583D9A00F71DD3 /* Deployment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8012F4F15583D9A00F71DD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8012F5F15583D9A00F71DD3 /* InfoPlist.strings in Resources */,
+				F8012F6615583D9A00F71DD3 /* MainMenu.xib in Resources */,
+				F8012F6915583D9A00F71DD3 /* rb_main.rb in Resources */,
+				F8012F6B15583D9A00F71DD3 /* AppDelegate.rb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8012F4D15583D9A00F71DD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8012F6115583D9A00F71DD3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F8012F5D15583D9A00F71DD3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8012F5E15583D9A00F71DD3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F8012F6415583D9A00F71DD3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8012F6515583D9A00F71DD3 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8012F6C15583D9A00F71DD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F8012F6D15583D9A00F71DD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F8012F6F15583D9A00F71DD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renamer/Renamer-Prefix.pch";
+				INFOPLIST_FILE = "Renamer/Renamer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F8012F7015583D9A00F71DD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renamer/Renamer-Prefix.pch";
+				INFOPLIST_FILE = "Renamer/Renamer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F8012F7215583D9A00F71DD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		F8012F7315583D9A00F71DD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8012F4B15583D9A00F71DD3 /* Build configuration list for PBXProject "Renamer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8012F6C15583D9A00F71DD3 /* Debug */,
+				F8012F6D15583D9A00F71DD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8012F6E15583D9A00F71DD3 /* Build configuration list for PBXNativeTarget "Renamer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8012F6F15583D9A00F71DD3 /* Debug */,
+				F8012F7015583D9A00F71DD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F8012F7115583D9A00F71DD3 /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8012F7215583D9A00F71DD3 /* Debug */,
+				F8012F7315583D9A00F71DD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8012F4815583D9A00F71DD3 /* Project object */;
+}
