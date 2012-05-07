@@ -8,25 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		F8012F5615583D9A00F71DD3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012F5515583D9A00F71DD3 /* Cocoa.framework */; };
-		F8012F5815583D9A00F71DD3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012F5715583D9A00F71DD3 /* MacRuby.framework */; };
 		F8012F5F15583D9A00F71DD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8012F5D15583D9A00F71DD3 /* InfoPlist.strings */; };
 		F8012F6115583D9A00F71DD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8012F6015583D9A00F71DD3 /* main.m */; };
 		F8012F6615583D9A00F71DD3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6415583D9A00F71DD3 /* MainMenu.xib */; };
 		F8012F6915583D9A00F71DD3 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6815583D9A00F71DD3 /* rb_main.rb */; };
 		F8012F6B15583D9A00F71DD3 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */; };
+		F8012F7815583FD700F71DD3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012F7715583FD700F71DD3 /* MacRuby.framework */; };
+		F89239A7155843DC0024FAF0 /* RenamerDropController.rb in Resources */ = {isa = PBXBuildFile; fileRef = F89239A6155843DC0024FAF0 /* RenamerDropController.rb */; };
+		F8F8019515585B4F003BCA65 /* RenamerTextField.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8F8019415585B4F003BCA65 /* RenamerTextField.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F8012F5115583D9A00F71DD3 /* Renamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8012F5515583D9A00F71DD3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		F8012F5715583D9A00F71DD3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
-		F8012F5C15583D9A00F71DD3 /* Renamer-Info.plist */ = {isa = PBXFileReference; path = "Renamer-Info.plist"; sourceTree = "<group>"; };
+		F8012F5C15583D9A00F71DD3 /* Renamer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Renamer-Info.plist"; sourceTree = "<group>"; };
 		F8012F5E15583D9A00F71DD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F8012F6015583D9A00F71DD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F8012F6215583D9A00F71DD3 /* Renamer-Prefix.pch */ = {isa = PBXFileReference; path = "Renamer-Prefix.pch"; sourceTree = "<group>"; };
+		F8012F6215583D9A00F71DD3 /* Renamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Renamer-Prefix.pch"; sourceTree = "<group>"; };
 		F8012F6515583D9A00F71DD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F8012F6815583D9A00F71DD3 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		F8012F7715583FD700F71DD3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		F89239A6155843DC0024FAF0 /* RenamerDropController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = RenamerDropController.rb; sourceTree = "<group>"; };
+		F8F8019415585B4F003BCA65 /* RenamerTextField.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = RenamerTextField.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,8 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8012F7815583FD700F71DD3 /* MacRuby.framework in Frameworks */,
 				F8012F5615583D9A00F71DD3 /* Cocoa.framework in Frameworks */,
-				F8012F5815583D9A00F71DD3 /* MacRuby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,8 +66,8 @@
 		F8012F5415583D9A00F71DD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8012F7715583FD700F71DD3 /* MacRuby.framework */,
 				F8012F5515583D9A00F71DD3 /* Cocoa.framework */,
-				F8012F5715583D9A00F71DD3 /* MacRuby.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,6 +79,8 @@
 				F8012F6315583D9A00F71DD3 /* Resources */,
 				F8012F6715583D9A00F71DD3 /* Other Sources */,
 				F8012F5B15583D9A00F71DD3 /* Supporting Files */,
+				F89239A6155843DC0024FAF0 /* RenamerDropController.rb */,
+				F8F8019415585B4F003BCA65 /* RenamerTextField.rb */,
 			);
 			path = Renamer;
 			sourceTree = "<group>";
@@ -178,6 +184,8 @@
 				F8012F6615583D9A00F71DD3 /* MainMenu.xib in Resources */,
 				F8012F6915583D9A00F71DD3 /* rb_main.rb in Resources */,
 				F8012F6B15583D9A00F71DD3 /* AppDelegate.rb in Resources */,
+				F89239A7155843DC0024FAF0 /* RenamerDropController.rb in Resources */,
+				F8F8019515585B4F003BCA65 /* RenamerTextField.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +330,7 @@
 				F8012F7015583D9A00F71DD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8012F7115583D9A00F71DD3 /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
 			isa = XCConfigurationList;
@@ -330,6 +339,7 @@
 				F8012F7315583D9A00F71DD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
