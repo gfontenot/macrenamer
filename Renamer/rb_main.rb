@@ -3,7 +3,7 @@
 #  Renamer
 #
 #  Created by Gordon Fontenot on 5/7/12.
-#  Copyright (c) 2012 WheelsTV. All rights reserved.
+#  Copyright (c) 2012 Gordon Fontenot. All rights reserved.
 #
 
 # Loading the Cocoa framework. If you need to load more frameworks, you can
