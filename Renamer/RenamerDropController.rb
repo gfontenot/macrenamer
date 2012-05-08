@@ -11,21 +11,46 @@ class RenamerDropController
   attr_accessor :renamerTableView
   attr_accessor :originalNameColumn
   attr_accessor :modifiedNameColumn
+  attr_accessor :renamerTabView
+  attr_accessor :findAndReplaceTabItem
+  attr_accessor :numberTabItem
   attr_accessor :findTextBox
   attr_accessor :replaceTextBox
+  attr_accessor :regexCheckBox
 
   attr_writer :submit_button
 
   def awakeFromNib
-    # NSNotificationCenter.defaultCenter.addObservwer(self, selector:slector(textDidChange), name: NSControlTextDidChangeNotification, object: findTextBox)
+
+    NSUserDefaults.standardUserDefaults.registerDefaults({useRegex: true})
+    NSUserDefaults.standardUserDefaults.synchronize
+
     renamerTableView.registerForDraggedTypes([NSURLPboardType])
+    regexCheckBox.state = NSUserDefaults.standardUserDefaults[:useRegex]
     @files = []
   end
 
   def modified_file_name_for_file(file_name)
     base_file_name, file_ext = file_name.split('.')
-    replaced_file_name = base_file_name.gsub(/#{findTextBox.stringValue}/i, "#{replaceTextBox.stringValue}")
-    "#{replaced_file_name}.#{file_ext}"
+
+    if renamerTabView.selectedTabViewItem == findAndReplaceTabItem
+
+      return file_name if findTextBox.stringValue == ""
+
+      case regexCheckBox.state
+      when NSOnState
+        begin
+          replaced_file_name = base_file_name.gsub(/#{findTextBox.stringValue}/i, replaceTextBox.stringValue)
+        rescue
+          replaced_file_name = base_file_name
+        end
+      else
+        replaced_file_name = base_file_name.gsub(findTextBox.stringValue, replaceTextBox.stringValue)
+      end
+    else
+      replaced_file_name = "#{base_file_name}_NUMBER"
+    end
+    findTextBox.stringValue ? "#{replaced_file_name}.#{file_ext}" : file_name
   end
 
   def rename_files
@@ -78,8 +103,32 @@ class RenamerDropController
     renamerTableView.reloadData
   end
 
-  def clicked(sender)
+  def deleteItemAtIndex(index)
+    @files.delete_at(index)
+    renamerTableView.reloadData
+  end
+
+  # NSTabViewDelegate
+
+  def tabView(a_tabView, willSelectTabViewItem: tabViewItem)
+    renamerTableView.reloadData
+  end
+
+  #  Buttons 
+
+  def submit(sender)
     rename_files
+  end
+
+  def checkboxToggle(sender)
+    NSUserDefaults.standardUserDefaults[:useRegex] = regexCheckBox.state.boolValue
+    NSUserDefaults.standardUserDefaults.synchronize 
+    renamerTableView.reloadData
+  end
+
+  def clear_list(sender)
+    @files.clear
+    renamerTableView.reloadData
   end
 
 end
