@@ -10,6 +10,6 @@
 class RenamerTextField < NSTextField
   def textDidChange(notification)
     super
-    delegate.textDidChange
+    delegate.ui_element_did_change
   end
 end

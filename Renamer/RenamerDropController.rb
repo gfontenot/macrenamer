@@ -11,17 +11,28 @@ class RenamerDropController
   attr_accessor :renamerTableView
   attr_accessor :originalNameColumn
   attr_accessor :modifiedNameColumn
+
   attr_accessor :renamerTabView
   attr_accessor :findAndReplaceTabItem
-  attr_accessor :numberTabItem
   attr_accessor :findTextBox
   attr_accessor :replaceTextBox
   attr_accessor :regexCheckBox
 
+  attr_accessor :numberTabItem
+  attr_accessor :numberStartValue
+  attr_accessor :numberStepValue
+  attr_accessor :numberAttachTextField
+  attr_accessor :numberRenameFormatPicker
+
   attr_writer :submit_button
 
-  def awakeFromNib
+  def initialize
+    self.numberStartValue = 1
+    self.numberStepValue = 1
+    self
+  end
 
+  def awakeFromNib
     NSUserDefaults.standardUserDefaults.registerDefaults({useRegex: true})
     NSUserDefaults.standardUserDefaults.synchronize
 
@@ -30,47 +41,59 @@ class RenamerDropController
     @files = []
   end
 
-  def modified_file_name_for_file(file_name)
+  def modified_file_name_for_file(file_name, index)
     base_file_name, file_ext = file_name.split('.')
 
-    if renamerTabView.selectedTabViewItem == findAndReplaceTabItem
-
-      return file_name if findTextBox.stringValue == ""
-
-      case regexCheckBox.state
-      when NSOnState
-        begin
-          replaced_file_name = base_file_name.gsub(/#{findTextBox.stringValue}/i, replaceTextBox.stringValue)
-        rescue
-          replaced_file_name = base_file_name
-        end
-      else
-        replaced_file_name = base_file_name.gsub(findTextBox.stringValue, replaceTextBox.stringValue)
-      end
+    replaced_file_name = if renamerTabView.selectedTabViewItem == findAndReplaceTabItem
+      regex_rename(file_name, base_file_name)
     else
-      replaced_file_name = "#{base_file_name}_NUMBER"
+      number_rename(file_name, base_file_name, index)
     end
     findTextBox.stringValue ? "#{replaced_file_name}.#{file_ext}" : file_name
   end
 
   def rename_files
-    @files.each do |file|
+    @files.each_with_index do |file, index|
       original_file_name = file[:name]
       original_file_path = file[:path].path
-      new_file_name = modified_file_name_for_file(original_file_name)
+      new_file_name = modified_file_name_for_file(original_file_name, index)
       new_file_path = original_file_path.gsub(original_file_name, new_file_name)
       File.rename(original_file_path, new_file_path)
 
       file[:name] = new_file_name
       file[:path] = new_file_path
     end
-
     renamerTableView.reloadData
-
   end
 
-  def textDidChange
-    renamerTableView.reloadData
+  def regex_rename(file_name, base_file_name)
+    return file_name if findTextBox.stringValue == ""
+    case regexCheckBox.state
+    when NSOnState
+      begin
+        replaced_file_name = base_file_name.gsub(/#{findTextBox.stringValue}/i, replaceTextBox.stringValue)
+      rescue
+        replaced_file_name = base_file_name
+      end
+    else
+      replaced_file_name = base_file_name.gsub(findTextBox.stringValue, replaceTextBox.stringValue)
+    end
+  end
+
+  def number_rename(file_name, base_file_name, index)
+
+    attached_text = numberAttachTextField.stringValue
+    attached_number = (index * numberStepValue + numberStartValue).to_i
+    case numberRenameFormatPicker.indexOfSelectedItem
+    when 0 # original-text-number
+      "#{base_file_name}#{attached_text}#{attached_number}"
+    when 1 # number-text-original
+      "#{attached_number}#{attached_text}#{base_file_name}"
+    when 2 # text-number
+      "#{attached_text}#{attached_number}"
+    when 3 # number-text
+      "#{attached_number}#{attached_text}"
+    end
   end
 
   # NSTableViewDelegate
@@ -81,7 +104,7 @@ class RenamerDropController
 
   def tableView(a_tableView, objectValueForTableColumn: aTableColumn, row: rowIndex)
     file = @files[rowIndex]
-    aTableColumn == originalNameColumn ? file[:name] : modified_file_name_for_file(file[:name])
+    aTableColumn == originalNameColumn ? file[:name] : modified_file_name_for_file(file[:name], rowIndex)
   end
 
   def tableView(a_tableView, validateDrop: info, proposedRow: row, proposedDropOperation: operation)
@@ -131,4 +154,7 @@ class RenamerDropController
     renamerTableView.reloadData
   end
 
+  def ui_element_did_change(sender)
+    renamerTableView.reloadData
+  end
 end
