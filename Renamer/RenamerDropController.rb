@@ -24,8 +24,6 @@ class RenamerDropController
   attr_accessor :numberAttachTextField
   attr_accessor :numberRenameFormatPicker
 
-  attr_writer :submit_button
-
   def initialize
     self.numberStartValue = 1
     self.numberStepValue = 1
@@ -55,7 +53,7 @@ class RenamerDropController
   def rename_files
     @files.each_with_index do |file, index|
       original_file_name = file[:name]
-      original_file_path = file[:path].path
+      original_file_path = file[:path]
       new_file_name = modified_file_name_for_file(original_file_name, index)
       new_file_path = original_file_path.gsub(original_file_name, new_file_name)
       File.rename(original_file_path, new_file_path)
@@ -120,7 +118,7 @@ class RenamerDropController
     return false unless dropped_files
 
     dropped_files.each do |file_url|
-      @files << {name: file_url.lastPathComponent, path: file_url}
+      add_file(file_url)
     end
 
     renamerTableView.reloadData
@@ -156,5 +154,14 @@ class RenamerDropController
 
   def ui_element_did_change(sender)
     renamerTableView.reloadData
+  end
+
+  public
+
+  def add_file(file_url)
+    if file_url.class == String
+      file_url = NSURL.fileURLWithPath(file_url) 
+    end
+    @files << {name: file_url.lastPathComponent, path: file_url.path}
   end
 end
