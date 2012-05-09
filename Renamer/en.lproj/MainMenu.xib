@@ -694,7 +694,6 @@
 												<int key="NSvFlags">290</int>
 												<string key="NSFrame">{{72, 17}, {339, 22}}</string>
 												<reference key="NSSuperview" ref="395854905"/>
-												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="880740426">
@@ -1030,7 +1029,6 @@
 												<string key="NSFrame">{{401, 16}, {19, 27}}</string>
 												<reference key="NSSuperview" ref="791669035"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="290490860"/>
 												<string key="NSReuseIdentifierKey">_NS:1083</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSStepperCell" key="NSCell" id="552205970">
@@ -1164,7 +1162,6 @@
 							<string key="NSFrame">{{371, 12}, {95, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="887323744">
@@ -1177,7 +1174,7 @@
 								<int key="NSButtonFlags">-2038284033</int>
 								<int key="NSButtonFlags2">129</int>
 								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent"/>
+								<string type="base64-UTF8" key="NSKeyEquivalent">DQ</string>
 								<int key="NSPeriodicDelay">200</int>
 								<int key="NSPeriodicInterval">25</int>
 							</object>
