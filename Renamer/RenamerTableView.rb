@@ -13,6 +13,6 @@ class RenamerTableView < NSTableView
     if (key == NSDeleteCharacter) 
       delegate.deleteItemAtIndex(self.selectedRow)
     end
-    # super(theEvent)
   end
+
 end
