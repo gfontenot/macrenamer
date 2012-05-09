@@ -43,6 +43,11 @@ class AppDelegate
     true
   end
 
+  def application(application, openFile: file)
+    @fileController.add_file(file)
+    renamerTableView.reloadData
+    true
+  end
 
   def rename_files
     @fileController.files.each_with_index do |file, index|
