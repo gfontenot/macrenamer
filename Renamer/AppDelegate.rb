@@ -27,8 +27,8 @@ class AppDelegate
 
   def initialize
     @fileController = FileController.new
-    numberStartValue = 1
-    numberStepValue = 1
+    @numberStartValue = 1
+    @numberStepValue = 1
   end
 
 	def applicationDidFinishLaunching(a_notification)
@@ -60,6 +60,7 @@ class AppDelegate
       file[:name] = new_file_name
       file[:path] = new_file_path
     end
+
     renamerTableView.reloadData
   end
 

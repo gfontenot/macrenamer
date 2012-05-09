@@ -61,7 +61,7 @@ class FileController
     end
   end
 
-  def number_rename(file_name, base_file_name, index)
+  def number_rename(file_name, base_file_name, index, sender)
     attached_text = sender.numberAttachTextField.stringValue
     attached_number = (index * sender.numberStepValue + sender.numberStartValue).to_i
     case sender.numberRenameFormatPicker.indexOfSelectedItem
