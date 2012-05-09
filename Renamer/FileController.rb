@@ -33,20 +33,6 @@ class FileController
     @files.clear
   end
 
-  def rename_files
-    @files.each_with_index do |file, index|
-      original_file_name = file[:name]
-      original_file_path = file[:path]
-      new_file_name = modified_file_name(original_file_name, index)
-      new_file_path = original_file_path.gsub(original_file_name, new_file_name)
-      File.rename(original_file_path, new_file_path)
-
-      file[:name] = new_file_name
-      file[:path] = new_file_path
-    end
-    renamerTableView.reloadData
-  end
-
   def modified_file_name(file_name, index, sender)
     base_file_name, file_ext = file_name.split('.')
     replaced_file_name = if sender.renamerTabView.selectedTabViewItem == sender.findAndReplaceTabItem
