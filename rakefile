@@ -1,0 +1,77 @@
+# Rakefile inspired by/ripped-off from BinaryAge's rakefile system for TotalTerminal
+# github.com/binaryage/totalterminal
+################################################################################################
+
+HOME_DIR = File.expand_path('~')
+ROOT_DIR = File.expand_path('.')
+DERIVED_DATA_DIR = File.join(HOME_DIR, 'Library', 'Developer', 'Xcode', 'DerivedData')
+RELEASE_DIR = File.join(HOME_DIR, 'Release')
+XCODE_PROJECT = File.join(ROOT_DIR, 'Renamer.xcodeproj')
+
+################################################################################################
+# dependencies
+
+begin
+    require 'colored'
+rescue LoadError
+    raise 'You must "gem install colored" to use terminal colors'
+end
+
+def file_color(text); text.yellow; end
+def dir_color(text); text.blue; end
+def cmd_color(text); text.magenta; end
+
+################################################################################################
+
+def die(msg, status=1)
+  puts "Error[#{status||$?}]: #{msg}".red
+  exit status||$?
+end
+
+def dirty_repo_warning()
+  is_clean = `git status`.match(/working directory clean/)
+  puts "Repository is not clean! You should commit all changes before releasing.".red unless is_clean
+end
+
+def announce(cmd)
+  puts "> " + cmd.yellow
+end
+
+def sys(cmd)
+  announce(cmd)
+  system(cmd)
+end
+
+################################################################################################
+
+desc "opens XCode project"
+task :open do
+  puts DERIVED_DATA_DIR
+  `open "#{XCODE_PROJECT}"`
+end
+
+desc "build for testing"
+task :build do
+  sys('xcodebuild -scheme "Renamer" -configuration Debug')
+end
+
+desc "Build for release"
+task :release do
+  sys('xcodebuild -scheme "Renamer" -configuration Release')
+
+  Dir.chdir(DERIVED_DATA_DIR)
+  dd_dir = Dir.glob('Renamer*')[0]
+  release = File.join(DERIVED_DATA_DIR, dd_dir, 'Build', 'Products', 'Release', 'Renamer.app')
+
+  sys("macruby_deploy --embed #{release}")
+end
+
+desc "Clean the build files"
+task :clean do
+  sys('xcodebuild clean -scheme "Renamer" -configuration Release')
+  sys('xcodebuild clean -scheme "Renamer" -configuration Debug')
+end
+
+desc "Test"
+task :test do
+end
