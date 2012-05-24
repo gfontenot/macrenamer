@@ -50,15 +50,32 @@ class AppDelegate
   end
 
   def rename_files
+    conflicts = false
     @fileController.files.each_with_index do |file, index|
       original_file_name = file[:name]
       original_file_path = file[:path]
       new_file_name = @fileController.modified_file_name(original_file_name, index, self)
       new_file_path = original_file_path.gsub(original_file_name, new_file_name)
-      File.rename(original_file_path, new_file_path)
 
-      file[:name] = new_file_name
-      file[:path] = new_file_path
+      unless original_file_name == new_file_name
+        if File.exists?(new_file_path)
+          puts "File Exists! #{new_file_name}"
+          conflicts = true
+        else
+          File.rename(original_file_path, new_file_path)
+          file[:name] = new_file_name
+          file[:path] = new_file_path
+        end
+      end
+
+      if conflicts
+        alert = NSAlert.new
+        alert.addButtonWithTitle("OK")
+        alert.setMessageText("Some files not renamed!")
+        alert.setInformativeText("Some files could not be renamed due to a conflict.\nPlease check the files and try again")
+        alert.setAlertStyle(NSWarningAlertStyle)
+        alert.beginSheetModalForWindow(window, modalDelegate: self, didEndSelector:nil, contextInfo:nil)
+      end
     end
 
     renamerTableView.reloadData
