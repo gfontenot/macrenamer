@@ -35,14 +35,19 @@ class FileController
 
   def modified_file_name(file_name, index, sender)
     split_name = file_name.split('.')
-    base_file_name = split_name[0...-1].join(".")
-    file_ext = split_name[-1]
+    if split_name.count > 1
+      base_file_name = split_name[0...-1].join(".")
+      file_ext = ".#{split_name[-1]}"
+    else
+      base_file_name = file_name
+      file_ext = ""
+    end
     replaced_file_name = if sender.renamerTabView.selectedTabViewItem == sender.findAndReplaceTabItem
       regex_rename(file_name, base_file_name, sender)
     else
       number_rename(file_name, base_file_name, index, sender)
     end
-    "#{replaced_file_name}.#{file_ext}"
+    "#{replaced_file_name}#{file_ext}"
   end
 
   def regex_rename(file_name, base_file_name, sender)
