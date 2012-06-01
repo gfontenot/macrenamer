@@ -8,6 +8,7 @@
 
 class AppDelegate
 	attr_accessor :window
+
   attr_accessor :renamerTableView
   attr_accessor :originalNameColumn
   attr_accessor :modifiedNameColumn
@@ -24,6 +25,9 @@ class AppDelegate
   attr_accessor :numberStepValue
   attr_accessor :numberAttachTextField
   attr_accessor :numberRenameFormatPicker
+
+  attr_accessor :progressSheet
+  attr_accessor :progressBar
 
   def initialize
     @fileController = FileController.new
@@ -50,6 +54,13 @@ class AppDelegate
   end
 
   def rename_files
+
+    progressBar.doubleValue = 0
+    progressBar.usesThreadedAnimation = true
+    progressBar.maxValue = @fileController.files.count
+
+    NSApp.beginSheet(progressSheet, modalForWindow:window, modalDelegate: self, didEndSelector: nil, contextInfo: nil)
+
     conflicts = false
     @fileController.files.each_with_index do |file, index|
       original_file_name = file[:name]
@@ -66,7 +77,11 @@ class AppDelegate
           file[:name] = new_file_name
           file[:path] = new_file_path
         end
+        progressBar.incrementBy(1)
       end
+
+      NSApp.endSheet(progressSheet)
+      progressSheet.orderOut(self)
 
       if conflicts
         alert = NSAlert.new
