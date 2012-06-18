@@ -36,11 +36,12 @@ class AppDelegate
   end
 
 	def applicationDidFinishLaunching(a_notification)
-	  NSUserDefaults.standardUserDefaults.registerDefaults({useRegex: true})
+	  NSUserDefaults.standardUserDefaults.registerDefaults({useRegex: true, numberRenameOption: 0})
     NSUserDefaults.standardUserDefaults.synchronize
 
     renamerTableView.registerForDraggedTypes([NSURLPboardType])
     regexCheckBox.state = NSUserDefaults.standardUserDefaults[:useRegex]
+    numberRenameFormatPicker.selectItemAtIndex(NSUserDefaults.standardUserDefaults[:numberRenameOption])
 	end
 	
 	def applicationShouldTerminateAfterLastWindowClosed(sender)
@@ -145,6 +146,12 @@ class AppDelegate
 
   def checkboxToggle(sender)
     NSUserDefaults.standardUserDefaults[:useRegex] = regexCheckBox.state.boolValue
+    NSUserDefaults.standardUserDefaults.synchronize 
+    renamerTableView.reloadData
+  end
+
+  def numberOptionChanged(sender)
+    NSUserDefaults.standardUserDefaults[:numberRenameOption] = numberRenameFormatPicker.indexOfSelectedItem
     NSUserDefaults.standardUserDefaults.synchronize 
     renamerTableView.reloadData
   end
