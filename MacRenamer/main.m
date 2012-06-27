@@ -1,6 +1,6 @@
 //
 //  main.m
-//  Renamer
+//  MacRenamer
 //
 //  Created by Gordon Fontenot on 5/7/12.
 //  Copyright (c) 2012 Gordon Fontenot. All rights reserved.

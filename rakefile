@@ -6,7 +6,7 @@ HOME_DIR = File.expand_path('~')
 ROOT_DIR = File.expand_path('.')
 DERIVED_DATA_DIR = File.join(HOME_DIR, 'Library', 'Developer', 'Xcode', 'DerivedData')
 RELEASE_DIR = File.join(HOME_DIR, 'Release')
-XCODE_PROJECT = File.join(ROOT_DIR, 'Renamer.xcodeproj')
+XCODE_PROJECT = File.join(ROOT_DIR, 'MacRenamer.xcodeproj')
 
 ################################################################################################
 # dependencies
@@ -52,24 +52,24 @@ end
 
 desc "build for testing"
 task :build do
-  sys('xcodebuild -scheme "Renamer" -configuration Debug')
+  sys('xcodebuild -scheme "MacRenamer" -configuration Debug')
 end
 
 desc "Build for release"
 task :release do
-  sys('xcodebuild -scheme "Renamer" -configuration Release')
+  sys('xcodebuild -scheme "MacRenamer" -configuration Release')
 
   Dir.chdir(DERIVED_DATA_DIR)
-  dd_dir = Dir.glob('Renamer*')[0]
-  release = File.join(DERIVED_DATA_DIR, dd_dir, 'Build', 'Products', 'Release', 'Renamer.app')
+  dd_dir = Dir.glob('MacRenamer*')[0]
+  release = File.join(DERIVED_DATA_DIR, dd_dir, 'Build', 'Products', 'Release', 'MacRenamer.app')
 
   sys("macruby_deploy --embed #{release}")
 end
 
 desc "Clean the build files"
 task :clean do
-  sys('xcodebuild clean -scheme "Renamer" -configuration Release')
-  sys('xcodebuild clean -scheme "Renamer" -configuration Debug')
+  sys('xcodebuild clean -scheme "MacRenamer" -configuration Release')
+  sys('xcodebuild clean -scheme "MacRenamer" -configuration Debug')
 end
 
 desc "Test"

@@ -1,6 +1,6 @@
 #
 #  FileController.rb
-#  Renamer
+#  MacRenamer
 #
 #  Created by Gordon Fontenot on 5/9/12.
 #  Copyright 2012 Gordon Fontenot. All rights reserved.
@@ -42,7 +42,7 @@ class FileController
       base_file_name = file_name
       file_ext = ""
     end
-    replaced_file_name = if sender.renamerTabView.selectedTabViewItem == sender.findAndReplaceTabItem
+    replaced_file_name = if sender.MacRenamerTabView.selectedTabViewItem == sender.findAndReplaceTabItem
       regex_rename(file_name, base_file_name, sender)
     else
       number_rename(file_name, base_file_name, index, sender)

@@ -1,12 +1,12 @@
 #
-#  RenamerDropController.rb
-#  Renamer
+#  MacRenamerDropController.rb
+#  MacRenamer
 #
 #  Created by Gordon Fontenot on 05/08/12.
 #  Copyright 2012 Gordon Fontenot. All rights reserved.
 #
 
-class RenamerTableView < NSTableView
+class MacRenamerTableView < NSTableView
 
   def keyDown(theEvent)
     key = theEvent.charactersIgnoringModifiers.characterAtIndex(0)

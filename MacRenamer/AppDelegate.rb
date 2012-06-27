@@ -1,6 +1,6 @@
 #
 #  AppDelegate.rb
-#  Renamer
+#  MacRenamer
 #
 #  Created by Gordon Fontenot on 5/7/12.
 #  Copyright 2012 Gordon Fontenot. All rights reserved.
@@ -9,11 +9,11 @@
 class AppDelegate
 	attr_accessor :window
 
-  attr_accessor :renamerTableView
+  attr_accessor :MacRenamerTableView
   attr_accessor :originalNameColumn
   attr_accessor :modifiedNameColumn
 
-  attr_accessor :renamerTabView
+  attr_accessor :MacRenamerTabView
 
   attr_accessor :findAndReplaceTabItem
   attr_accessor :findTextBox
@@ -39,7 +39,7 @@ class AppDelegate
 	  NSUserDefaults.standardUserDefaults.registerDefaults({useRegex: true, numberRenameOption: 0})
     NSUserDefaults.standardUserDefaults.synchronize
 
-    renamerTableView.registerForDraggedTypes([NSURLPboardType])
+    MacRenamerTableView.registerForDraggedTypes([NSURLPboardType])
     regexCheckBox.state = NSUserDefaults.standardUserDefaults[:useRegex]
     numberRenameFormatPicker.selectItemAtIndex(NSUserDefaults.standardUserDefaults[:numberRenameOption])
 	end
@@ -50,7 +50,7 @@ class AppDelegate
 
   def application(application, openFile: file)
     @fileController.add_file(file)
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
     true
   end
 
@@ -94,7 +94,7 @@ class AppDelegate
       end
     end
 
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
   end
 
   # NSTableViewDelegate
@@ -109,7 +109,7 @@ class AppDelegate
   end
 
   def tableView(a_tableView, validateDrop: info, proposedRow: row, proposedDropOperation: operation)
-    renamerTableView.setDropRow(-1, dropOperation: NSTableViewDropOn)
+    MacRenamerTableView.setDropRow(-1, dropOperation: NSTableViewDropOn)
     NSDragOperationEvery
   end
 
@@ -124,18 +124,18 @@ class AppDelegate
       @fileController.add_file(file_url)
     end
 
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
   end
 
   def deleteItemAtIndex(index)
     @fileController.delete_file_at(index)
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
   end
 
   # NSTabViewDelegate
 
   def tabView(a_tabView, willSelectTabViewItem: tabViewItem)
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
   end
 
   #  Buttons 
@@ -147,22 +147,22 @@ class AppDelegate
   def checkboxToggle(sender)
     NSUserDefaults.standardUserDefaults[:useRegex] = regexCheckBox.state.boolValue
     NSUserDefaults.standardUserDefaults.synchronize 
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
   end
 
   def numberOptionChanged(sender)
     NSUserDefaults.standardUserDefaults[:numberRenameOption] = numberRenameFormatPicker.indexOfSelectedItem
     NSUserDefaults.standardUserDefaults.synchronize 
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
   end
 
   def clear_list(sender)
     @fileController.clear
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
   end
 
   def ui_element_did_change(sender)
-    renamerTableView.reloadData
+    MacRenamerTableView.reloadData
   end
 end
 

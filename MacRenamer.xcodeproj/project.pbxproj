@@ -14,25 +14,25 @@
 		F8012F6915583D9A00F71DD3 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6815583D9A00F71DD3 /* rb_main.rb */; };
 		F8012F6B15583D9A00F71DD3 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */; };
 		F8012F7815583FD700F71DD3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012F7715583FD700F71DD3 /* MacRuby.framework */; };
-		F8258B871559A4BB008E177C /* RenamerTableView.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8258B861559A4BB008E177C /* RenamerTableView.rb */; };
+		F8258B871559A4BB008E177C /* MacRenamerTableView.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8258B861559A4BB008E177C /* MacRenamerTableView.rb */; };
 		F8338B6B155AD86300593BE9 /* FileController.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8338B6A155AD86300593BE9 /* FileController.rb */; };
-		F8F8019515585B4F003BCA65 /* RenamerTextField.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8F8019415585B4F003BCA65 /* RenamerTextField.rb */; };
+		F8F8019515585B4F003BCA65 /* MacRenamerTextField.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8F8019415585B4F003BCA65 /* MacRenamerTextField.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F8012F5115583D9A00F71DD3 /* Renamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8012F5115583D9A00F71DD3 /* MacRenamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRenamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8012F5515583D9A00F71DD3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		F8012F5C15583D9A00F71DD3 /* Renamer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Renamer-Info.plist"; sourceTree = "<group>"; };
+		F8012F5C15583D9A00F71DD3 /* MacRenamer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacRenamer-Info.plist"; sourceTree = "<group>"; };
 		F8012F5E15583D9A00F71DD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F8012F6015583D9A00F71DD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F8012F6215583D9A00F71DD3 /* Renamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Renamer-Prefix.pch"; sourceTree = "<group>"; };
+		F8012F6215583D9A00F71DD3 /* MacRenamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacRenamer-Prefix.pch"; sourceTree = "<group>"; };
 		F8012F6515583D9A00F71DD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F8012F6815583D9A00F71DD3 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
 		F8012F7715583FD700F71DD3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
-		F8258B861559A4BB008E177C /* RenamerTableView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = RenamerTableView.rb; sourceTree = "<group>"; };
+		F8258B861559A4BB008E177C /* MacRenamerTableView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MacRenamerTableView.rb; sourceTree = "<group>"; };
 		F8338B6A155AD86300593BE9 /* FileController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = FileController.rb; sourceTree = "<group>"; };
-		F8F8019415585B4F003BCA65 /* RenamerTextField.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = RenamerTextField.rb; sourceTree = "<group>"; };
+		F8F8019415585B4F003BCA65 /* MacRenamerTextField.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MacRenamerTextField.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 		F8012F4615583D9A00F71DD3 = {
 			isa = PBXGroup;
 			children = (
-				F8012F5A15583D9A00F71DD3 /* Renamer */,
+				F8012F5A15583D9A00F71DD3 /* MacRenamer */,
 				F8012F5415583D9A00F71DD3 /* Frameworks */,
 				F8012F5215583D9A00F71DD3 /* Products */,
 			);
@@ -60,7 +60,7 @@
 		F8012F5215583D9A00F71DD3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8012F5115583D9A00F71DD3 /* Renamer.app */,
+				F8012F5115583D9A00F71DD3 /* MacRenamer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,27 +74,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F8012F5A15583D9A00F71DD3 /* Renamer */ = {
+		F8012F5A15583D9A00F71DD3 /* MacRenamer */ = {
 			isa = PBXGroup;
 			children = (
-				F8258B861559A4BB008E177C /* RenamerTableView.rb */,
+				F8258B861559A4BB008E177C /* MacRenamerTableView.rb */,
 				F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */,
 				F8012F6315583D9A00F71DD3 /* Resources */,
 				F8012F6715583D9A00F71DD3 /* Other Sources */,
 				F8012F5B15583D9A00F71DD3 /* Supporting Files */,
-				F8F8019415585B4F003BCA65 /* RenamerTextField.rb */,
+				F8F8019415585B4F003BCA65 /* MacRenamerTextField.rb */,
 				F8338B6A155AD86300593BE9 /* FileController.rb */,
 			);
-			path = Renamer;
+			path = MacRenamer;
 			sourceTree = "<group>";
 		};
 		F8012F5B15583D9A00F71DD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F8012F5C15583D9A00F71DD3 /* Renamer-Info.plist */,
+				F8012F5C15583D9A00F71DD3 /* MacRenamer-Info.plist */,
 				F8012F5D15583D9A00F71DD3 /* InfoPlist.strings */,
 				F8012F6015583D9A00F71DD3 /* main.m */,
-				F8012F6215583D9A00F71DD3 /* Renamer-Prefix.pch */,
+				F8012F6215583D9A00F71DD3 /* MacRenamer-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -134,9 +134,9 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		F8012F5015583D9A00F71DD3 /* Renamer */ = {
+		F8012F5015583D9A00F71DD3 /* MacRenamer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8012F6E15583D9A00F71DD3 /* Build configuration list for PBXNativeTarget "Renamer" */;
+			buildConfigurationList = F8012F6E15583D9A00F71DD3 /* Build configuration list for PBXNativeTarget "MacRenamer" */;
 			buildPhases = (
 				F8012F4D15583D9A00F71DD3 /* Sources */,
 				F8012F4E15583D9A00F71DD3 /* Frameworks */,
@@ -146,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = Renamer;
-			productName = Renamer;
-			productReference = F8012F5115583D9A00F71DD3 /* Renamer.app */;
+			name = MacRenamer;
+			productName = MacRenamer;
+			productReference = F8012F5115583D9A00F71DD3 /* MacRenamer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +160,7 @@
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Gordon Fontenot";
 			};
-			buildConfigurationList = F8012F4B15583D9A00F71DD3 /* Build configuration list for PBXProject "Renamer" */;
+			buildConfigurationList = F8012F4B15583D9A00F71DD3 /* Build configuration list for PBXProject "MacRenamer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F8012F5015583D9A00F71DD3 /* Renamer */,
+				F8012F5015583D9A00F71DD3 /* MacRenamer */,
 				F8012F5915583D9A00F71DD3 /* Deployment */,
 			);
 		};
@@ -187,8 +187,8 @@
 				F8012F6615583D9A00F71DD3 /* MainMenu.xib in Resources */,
 				F8012F6915583D9A00F71DD3 /* rb_main.rb in Resources */,
 				F8012F6B15583D9A00F71DD3 /* AppDelegate.rb in Resources */,
-				F8F8019515585B4F003BCA65 /* RenamerTextField.rb in Resources */,
-				F8258B871559A4BB008E177C /* RenamerTableView.rb in Resources */,
+				F8F8019515585B4F003BCA65 /* MacRenamerTextField.rb in Resources */,
+				F8258B871559A4BB008E177C /* MacRenamerTableView.rb in Resources */,
 				F8338B6B155AD86300593BE9 /* FileController.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,8 +281,8 @@
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Renamer/Renamer-Prefix.pch";
-				INFOPLIST_FILE = "Renamer/Renamer-Info.plist";
+				GCC_PREFIX_HEADER = "MacRenamer/MacRenamer-Prefix.pch";
+				INFOPLIST_FILE = "MacRenamer/MacRenamer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,8 +298,8 @@
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Renamer/Renamer-Prefix.pch";
-				INFOPLIST_FILE = "Renamer/Renamer-Info.plist";
+				GCC_PREFIX_HEADER = "MacRenamer/MacRenamer-Prefix.pch";
+				INFOPLIST_FILE = "MacRenamer/MacRenamer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -320,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8012F4B15583D9A00F71DD3 /* Build configuration list for PBXProject "Renamer" */ = {
+		F8012F4B15583D9A00F71DD3 /* Build configuration list for PBXProject "MacRenamer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8012F6C15583D9A00F71DD3 /* Debug */,
@@ -329,7 +329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8012F6E15583D9A00F71DD3 /* Build configuration list for PBXNativeTarget "Renamer" */ = {
+		F8012F6E15583D9A00F71DD3 /* Build configuration list for PBXNativeTarget "MacRenamer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8012F6F15583D9A00F71DD3 /* Debug */,
