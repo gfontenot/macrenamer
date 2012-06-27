@@ -11,12 +11,11 @@
 		F8012F5F15583D9A00F71DD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8012F5D15583D9A00F71DD3 /* InfoPlist.strings */; };
 		F8012F6115583D9A00F71DD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8012F6015583D9A00F71DD3 /* main.m */; };
 		F8012F6615583D9A00F71DD3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6415583D9A00F71DD3 /* MainMenu.xib */; };
-		F8012F6915583D9A00F71DD3 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6815583D9A00F71DD3 /* rb_main.rb */; };
-		F8012F6B15583D9A00F71DD3 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */; };
-		F8012F7815583FD700F71DD3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012F7715583FD700F71DD3 /* MacRuby.framework */; };
-		F8258B871559A4BB008E177C /* MacRenamerTableView.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8258B861559A4BB008E177C /* MacRenamerTableView.rb */; };
-		F8338B6B155AD86300593BE9 /* FileController.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8338B6A155AD86300593BE9 /* FileController.rb */; };
-		F8F8019515585B4F003BCA65 /* MacRenamerTextField.rb in Resources */ = {isa = PBXBuildFile; fileRef = F8F8019415585B4F003BCA65 /* MacRenamerTextField.rb */; };
+		F8AF1FB5159B68F20088EC79 /* MRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AF1FB4159B68F20088EC79 /* MRAppDelegate.m */; };
+		F8AF1FBE159B71BB0088EC79 /* MRFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AF1FBD159B71BB0088EC79 /* MRFileController.m */; };
+		F8AF1FC4159B8FA40088EC79 /* MRTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AF1FC3159B8FA40088EC79 /* MRTextField.m */; };
+		F8AF1FCF159BB1070088EC79 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AF1FCE159BB1070088EC79 /* libicucore.dylib */; };
+		F8AF1FD2159BB11A0088EC79 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AF1FD1159BB11A0088EC79 /* RegexKitLite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,12 +26,15 @@
 		F8012F6015583D9A00F71DD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8012F6215583D9A00F71DD3 /* MacRenamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacRenamer-Prefix.pch"; sourceTree = "<group>"; };
 		F8012F6515583D9A00F71DD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		F8012F6815583D9A00F71DD3 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
-		F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
-		F8012F7715583FD700F71DD3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
-		F8258B861559A4BB008E177C /* MacRenamerTableView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MacRenamerTableView.rb; sourceTree = "<group>"; };
-		F8338B6A155AD86300593BE9 /* FileController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = FileController.rb; sourceTree = "<group>"; };
-		F8F8019415585B4F003BCA65 /* MacRenamerTextField.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MacRenamerTextField.rb; sourceTree = "<group>"; };
+		F8AF1FB3159B68F20088EC79 /* MRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAppDelegate.h; sourceTree = "<group>"; };
+		F8AF1FB4159B68F20088EC79 /* MRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAppDelegate.m; sourceTree = "<group>"; };
+		F8AF1FBC159B71BB0088EC79 /* MRFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRFileController.h; sourceTree = "<group>"; };
+		F8AF1FBD159B71BB0088EC79 /* MRFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRFileController.m; sourceTree = "<group>"; };
+		F8AF1FC2159B8FA40088EC79 /* MRTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRTextField.h; sourceTree = "<group>"; };
+		F8AF1FC3159B8FA40088EC79 /* MRTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRTextField.m; sourceTree = "<group>"; };
+		F8AF1FCE159BB1070088EC79 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		F8AF1FD0159BB11A0088EC79 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		F8AF1FD1159BB11A0088EC79 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8012F7815583FD700F71DD3 /* MacRuby.framework in Frameworks */,
+				F8AF1FCF159BB1070088EC79 /* libicucore.dylib in Frameworks */,
 				F8012F5615583D9A00F71DD3 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +53,7 @@
 		F8012F4615583D9A00F71DD3 = {
 			isa = PBXGroup;
 			children = (
+				F8AF1FCE159BB1070088EC79 /* libicucore.dylib */,
 				F8012F5A15583D9A00F71DD3 /* MacRenamer */,
 				F8012F5415583D9A00F71DD3 /* Frameworks */,
 				F8012F5215583D9A00F71DD3 /* Products */,
@@ -68,7 +71,6 @@
 		F8012F5415583D9A00F71DD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F8012F7715583FD700F71DD3 /* MacRuby.framework */,
 				F8012F5515583D9A00F71DD3 /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -77,13 +79,14 @@
 		F8012F5A15583D9A00F71DD3 /* MacRenamer */ = {
 			isa = PBXGroup;
 			children = (
-				F8258B861559A4BB008E177C /* MacRenamerTableView.rb */,
-				F8012F6A15583D9A00F71DD3 /* AppDelegate.rb */,
 				F8012F6315583D9A00F71DD3 /* Resources */,
-				F8012F6715583D9A00F71DD3 /* Other Sources */,
 				F8012F5B15583D9A00F71DD3 /* Supporting Files */,
-				F8F8019415585B4F003BCA65 /* MacRenamerTextField.rb */,
-				F8338B6A155AD86300593BE9 /* FileController.rb */,
+				F8AF1FB3159B68F20088EC79 /* MRAppDelegate.h */,
+				F8AF1FB4159B68F20088EC79 /* MRAppDelegate.m */,
+				F8AF1FBC159B71BB0088EC79 /* MRFileController.h */,
+				F8AF1FBD159B71BB0088EC79 /* MRFileController.m */,
+				F8AF1FC2159B8FA40088EC79 /* MRTextField.h */,
+				F8AF1FC3159B8FA40088EC79 /* MRTextField.m */,
 			);
 			path = MacRenamer;
 			sourceTree = "<group>";
@@ -91,6 +94,8 @@
 		F8012F5B15583D9A00F71DD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F8AF1FD0159BB11A0088EC79 /* RegexKitLite.h */,
+				F8AF1FD1159BB11A0088EC79 /* RegexKitLite.m */,
 				F8012F5C15583D9A00F71DD3 /* MacRenamer-Info.plist */,
 				F8012F5D15583D9A00F71DD3 /* InfoPlist.strings */,
 				F8012F6015583D9A00F71DD3 /* main.m */,
@@ -107,31 +112,7 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		F8012F6715583D9A00F71DD3 /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				F8012F6815583D9A00F71DD3 /* rb_main.rb */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
-
-/* Begin PBXLegacyTarget section */
-		F8012F5915583D9A00F71DD3 /* Deployment */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "--compile --embed";
-			buildConfigurationList = F8012F7115583D9A00F71DD3 /* Build configuration list for PBXLegacyTarget "Deployment" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/local/bin/macruby_deploy;
-			dependencies = (
-			);
-			name = Deployment;
-			passBuildSettingsInEnvironment = 1;
-			productName = Deployment;
-		};
-/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		F8012F5015583D9A00F71DD3 /* MacRenamer */ = {
@@ -173,7 +154,6 @@
 			projectRoot = "";
 			targets = (
 				F8012F5015583D9A00F71DD3 /* MacRenamer */,
-				F8012F5915583D9A00F71DD3 /* Deployment */,
 			);
 		};
 /* End PBXProject section */
@@ -185,11 +165,6 @@
 			files = (
 				F8012F5F15583D9A00F71DD3 /* InfoPlist.strings in Resources */,
 				F8012F6615583D9A00F71DD3 /* MainMenu.xib in Resources */,
-				F8012F6915583D9A00F71DD3 /* rb_main.rb in Resources */,
-				F8012F6B15583D9A00F71DD3 /* AppDelegate.rb in Resources */,
-				F8F8019515585B4F003BCA65 /* MacRenamerTextField.rb in Resources */,
-				F8258B871559A4BB008E177C /* MacRenamerTableView.rb in Resources */,
-				F8338B6B155AD86300593BE9 /* FileController.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8012F6115583D9A00F71DD3 /* main.m in Sources */,
+				F8AF1FB5159B68F20088EC79 /* MRAppDelegate.m in Sources */,
+				F8AF1FBE159B71BB0088EC79 /* MRFileController.m in Sources */,
+				F8AF1FC4159B8FA40088EC79 /* MRTextField.m in Sources */,
+				F8AF1FD2159BB11A0088EC79 /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,18 +284,6 @@
 			};
 			name = Release;
 		};
-		F8012F7215583D9A00F71DD3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		F8012F7315583D9A00F71DD3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -334,15 +301,6 @@
 			buildConfigurations = (
 				F8012F6F15583D9A00F71DD3 /* Debug */,
 				F8012F7015583D9A00F71DD3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8012F7115583D9A00F71DD3 /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8012F7215583D9A00F71DD3 /* Debug */,
-				F8012F7315583D9A00F71DD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
