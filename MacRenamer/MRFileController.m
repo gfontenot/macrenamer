@@ -97,16 +97,16 @@
   
   switch ([[NSUserDefaults standardUserDefaults] integerForKey:@"numberRenameOption"]) {
     case 0: // original-text-number
-      formattedName = [NSString stringWithFormat:@"%@%@%i", baseFileName, attachedText, attachedNumber];
+      formattedName = [NSString stringWithFormat:@"%@%@%li", baseFileName, attachedText, attachedNumber];
       break;
     case 1: // number-text-original
-      formattedName = [NSString stringWithFormat:@"%i%@%@", attachedNumber, attachedText, baseFileName];
+      formattedName = [NSString stringWithFormat:@"%li%@%@", attachedNumber, attachedText, baseFileName];
       break;
     case 2: // text-number
-      formattedName = [NSString stringWithFormat:@"%@%i", attachedText, attachedNumber];
+      formattedName = [NSString stringWithFormat:@"%@%li", attachedText, attachedNumber];
       break;
     case 3: // number-text
-      formattedName = [NSString stringWithFormat:@"%i%@", attachedNumber, attachedText];
+      formattedName = [NSString stringWithFormat:@"%li%@", attachedNumber, attachedText];
       break;
     default:
       NSLog(@"Error! Should not be called! Option was %ld", [[NSUserDefaults standardUserDefaults] integerForKey:@"numberRenameOption"]);
