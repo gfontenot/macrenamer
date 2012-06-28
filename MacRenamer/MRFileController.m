@@ -116,11 +116,15 @@
 }
 
 - (void)updateFileAtIndex:(NSInteger)index forName:(NSString *)newName andPath:(NSString *)newPath {
-  
+  NSArray *keys = [NSArray arrayWithObjects:@"name", @"path", nil];
+  NSArray *values = [NSArray arrayWithObjects:newName, newPath, nil];
+  NSDictionary *newFile = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+  [files setObject:newFile atIndexedSubscript:index];
 }
 
 - (void)clear {
-  
+  files = nil;
+  files = [NSMutableArray new];
 }
 
 
