@@ -30,7 +30,7 @@
   NSURL *fileURL = [NSURL URLWithString:rawFilePath];
   
   NSString *fileName = [fileURL lastPathComponent];
-  NSString *filePath = rawFilePath;
+  NSString *filePath = [rawFilePath stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
   
   NSDictionary *file = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: fileName, filePath, nil] forKeys:[NSArray arrayWithObjects: @"name", @"path", nil]];
 

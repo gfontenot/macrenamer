@@ -57,7 +57,7 @@
   
   BOOL conflicts = NO;
   
-  for (NSInteger i = 0; i <= [self.fileController count]; i++) {
+  for (NSInteger i = 0; i < [self.fileController count]; i++) {
     NSDictionary *file = [self.fileController fileForIndex:i];
     NSString *originalFileName = [file objectForKey:@"name"];
     NSString *originalFilePath = [file objectForKey:@"path"];
@@ -69,7 +69,18 @@
       if ([[NSFileManager defaultManager] fileExistsAtPath:newFilePath]) {
         conflicts = YES;
       } else {
-        [[NSFileManager defaultManager] moveItemAtPath:originalFilePath toPath:newFilePath error:nil];
+
+        if ([[NSFileManager defaultManager] fileExistsAtPath:originalFilePath]) {
+          NSLog(@"Original file exists");
+        }
+
+        NSError *error = nil;
+        if ([[NSFileManager defaultManager] moveItemAtPath:originalFilePath toPath:newFilePath error:&error]) {
+          NSLog(@"Move successful");
+        } else {
+          conflicts= YES; // For right now, set conflicts to yes.
+          NSLog(@"%@", error);
+        }
         [fileController updateFileAtIndex:i forName:newFileName andPath:newFilePath];
       }
       [progressBar incrementBy:1];
