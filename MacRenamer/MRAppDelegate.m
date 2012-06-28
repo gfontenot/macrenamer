@@ -42,7 +42,6 @@
 }
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filePath {
-  NSLog(@"DROP");
   [self.fileController addFile:filePath];
   [_tableView reloadData];
   return YES;
@@ -65,18 +64,13 @@
     NSString *newFileName = [self.fileController modifiedFileNameForFileName:originalFileName atIndex:i forRenameTab:[tabView selectedTabViewItem]];
     NSString *newFilePath = [originalFilePath stringByReplacingOccurrencesOfString:originalFileName withString:newFileName];
     
-    if (originalFileName != newFileName) {
+    if (![originalFileName isEqualToString:newFileName]) {
       if ([[NSFileManager defaultManager] fileExistsAtPath:newFilePath]) {
         conflicts = YES;
       } else {
 
-        if ([[NSFileManager defaultManager] fileExistsAtPath:originalFilePath]) {
-          NSLog(@"Original file exists");
-        }
-
         NSError *error = nil;
         if ([[NSFileManager defaultManager] moveItemAtPath:originalFilePath toPath:newFilePath error:&error]) {
-          NSLog(@"Move successful");
         } else {
           conflicts= YES; // For right now, set conflicts to yes.
           NSLog(@"%@", error);
@@ -144,7 +138,8 @@
 #pragma mark - Button actions
 
 - (IBAction)submit:(id)sender {
-  [self renameFiles];
+  if ([fileController count] > 0)
+    [self renameFiles];
 }
 
 - (IBAction)checkboxToggle:(id)sender {
