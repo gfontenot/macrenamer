@@ -53,7 +53,6 @@
 		F8012F4615583D9A00F71DD3 = {
 			isa = PBXGroup;
 			children = (
-				F8AF1FCE159BB1070088EC79 /* libicucore.dylib */,
 				F8012F5A15583D9A00F71DD3 /* MacRenamer */,
 				F8012F5415583D9A00F71DD3 /* Frameworks */,
 				F8012F5215583D9A00F71DD3 /* Products */,
@@ -71,6 +70,7 @@
 		F8012F5415583D9A00F71DD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8AF1FCE159BB1070088EC79 /* libicucore.dylib */,
 				F8012F5515583D9A00F71DD3 /* Cocoa.framework */,
 			);
 			name = Frameworks;
