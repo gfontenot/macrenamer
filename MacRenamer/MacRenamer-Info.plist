@@ -18,6 +18,8 @@
 				<string>fold</string>
 				<string>****</string>
 			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
