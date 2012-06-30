@@ -26,16 +26,38 @@
 }
 
 - (void)addFile:(NSString *)rawFilePath {
-  
-  NSURL *fileURL = [NSURL URLWithString:rawFilePath];
-  
-  NSString *fileName = [fileURL lastPathComponent];
-  NSString *filePath = [rawFilePath stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
-  
-  NSDictionary *file = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: fileName, filePath, nil] forKeys:[NSArray arrayWithObjects: @"name", @"path", nil]];
 
-  if (![files containsObject:file]) {
-    [files addObject:file];
+  NSMutableArray *fileList = [NSMutableArray new];
+
+  NSString *filePath = [rawFilePath stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
+
+  BOOL isDir;
+
+  if ([[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir] && isDir) {
+
+    unichar lastChar = [filePath characterAtIndex:[filePath length]-1];
+    NSString *finalChar = [NSString stringWithCharacters:&lastChar length:1];
+
+    if (![finalChar isEqualToString:@"/"]) {
+      filePath = [NSString stringWithFormat:@"%@/", filePath];
+    }
+
+    for (NSString *dirFile in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:filePath error:nil]) {
+      [fileList addObject:[NSString stringWithFormat:@"%@%@", filePath, dirFile]];
+    }
+  } else {
+    [fileList addObject:filePath];
+  }
+
+  for (NSString *aFilePath in fileList) {
+    NSURL *fileURL = [NSURL URLWithString:aFilePath];
+    NSString *fileName = [fileURL lastPathComponent];
+
+    NSDictionary *file = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: fileName, aFilePath, nil] forKeys:[NSArray arrayWithObjects: @"name", @"path", nil]];
+
+    if (![files containsObject:file]) {
+      [files addObject:file];
+    }
   }
 }
 
@@ -49,6 +71,9 @@
   if ([splitName count] > 1) {
     baseFileName = [[splitName objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [splitName count] -1)]] componentsJoinedByString:@"."];
     fileExt = [NSString stringWithFormat: @".%@", [splitName objectAtIndex:[splitName count] -1]];
+  } else {
+    baseFileName = originalName;
+    fileExt = @"";
   }
   
   NSString *replacedFileName;
@@ -58,7 +83,7 @@
   } else {
     replacedFileName = [self numberRename:baseFileName forIndex:index andRenameTab:tabItem];
   }
-  
+
   return [NSString stringWithFormat:@"%@%@", replacedFileName, fileExt];
 }
 
